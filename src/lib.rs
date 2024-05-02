@@ -222,7 +222,7 @@ impl Default for VitaliumVerb {
 }
 
 impl Plugin for VitaliumVerb {
-    const NAME: &'static str = "Vitalium Verb";
+    const NAME: &'static str = "VitaliumVerb";
     const VENDOR: &'static str = "Billy Messenger";
     const URL: &'static str = env!("CARGO_PKG_HOMEPAGE");
     const EMAIL: &'static str = "60663878+BillyDM@users.noreply.github.com";
