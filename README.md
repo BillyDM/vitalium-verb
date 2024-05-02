@@ -14,7 +14,7 @@ cargo +nightly xtask bundle vitalium_verb --release
 
 ## Installing
 
-Copy `/target/bundled/Vitalium Verb.clap` and/or `/target/bundled/Vitalium Verb.vst3` to the corresponding plugin directories for your OS.
+Copy `/target/bundled/VitaliumVerb.clap` and/or `/target/bundled/VitaliumVerb.vst3` to the corresponding plugin directories for your OS.
 
 On macOS you may need to [disable Gatekeeper](https://disable-gatekeeper.github.io/) as Apple has recently made it more difficult to run unsigned code on macOS.
 
