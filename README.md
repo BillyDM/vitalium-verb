@@ -4,7 +4,11 @@ A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](
 
 This plugin has no GUI yet, and I don't plan on making a GUI in the forseeable future. Although if anyone wants to contribute a GUI, I'd be happy to include it!
 
-## Building
+## Download
+
+You can download pre-built binaries for Linux, Windows, and MacOS from the [Releases](https://github.com/BillyDM/vitalium-verb/releases) tab.
+
+## Building and Installing
 
 After installing [Rust](https://rustup.rs/) and the [nightly toolchain](https://rust-lang.github.io/rustup/concepts/channels.html) (`rustup toolchain install nightly`), you can compile VitaliumVerb as follows:
 
@@ -12,9 +16,7 @@ After installing [Rust](https://rustup.rs/) and the [nightly toolchain](https://
 cargo +nightly xtask bundle vitalium_verb --release
 ```
 
-## Installing
-
-Copy `/target/bundled/VitaliumVerb.clap` and/or `/target/bundled/VitaliumVerb.vst3` to the corresponding plugin directories for your OS.
+Then copy `/target/bundled/VitaliumVerb.clap` and/or `/target/bundled/VitaliumVerb.vst3` to the corresponding plugin directories for your OS.
 
 On macOS you may need to [disable Gatekeeper](https://disable-gatekeeper.github.io/) as Apple has recently made it more difficult to run unsigned code on macOS.
 
