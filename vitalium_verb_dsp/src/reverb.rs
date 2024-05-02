@@ -919,9 +919,6 @@ impl Reverb {
 
     /// Resets all buffers.
     pub fn reset(&mut self) {
-        self.wet_amp = V_0;
-        self.dry_amp = V_0;
-
         self.pre_low_filter.reset();
         self.pre_high_filter.reset();
 

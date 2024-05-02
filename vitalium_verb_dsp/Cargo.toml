@@ -1,6 +1,6 @@
 [package]
 name = "vitalium_verb_dsp"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A port of the reverb module from the Vital/Vitalium synthesizer"
 readme = "README.md"
