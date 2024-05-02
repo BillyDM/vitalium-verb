@@ -1,0 +1,36 @@
+[package]
+name = "vitalium_verb"
+version = "0.1.0"
+edition = "2021"
+authors = ["Billy Messenger <60663878+BillyDM@users.noreply.github.com>"]
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/BillyDM/vitalium-verb"
+description = "A port of the reverb module from the Vital/Vitalium synthesizer"
+publish = false
+
+[workspace]
+members = [
+    "vitalium_verb_dsp",
+    "xtask"
+]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+vitalium_verb_dsp = { path = "./vitalium_verb_dsp" }
+# Remove the `assert_process_allocs` feature to allow allocations on the audio
+# thread in debug builds.
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs"] }
+# Uncomment the below line to disable the on-by-default VST3 feature to remove
+# the GPL compatibility requirement
+# nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", default_features = false, features = ["assert_process_allocs"] }
+
+[profile.release]
+lto = "thin"
+strip = "symbols"
+
+[profile.profiling]
+inherits = "release"
+debug = true
+strip = "none"

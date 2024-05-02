@@ -1,0 +1,15 @@
+[package]
+name = "vitalium_verb_dsp"
+version = "0.1.0"
+edition = "2021"
+description = "A port of the reverb module from the Vital/Vitalium synthesizer"
+readme = "README.md"
+authors = ["Billy Messenger <60663878+BillyDM@users.noreply.github.com>"]
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/BillyDM/vitalium-verb"
+repository = "https://github.com/BillyDM/vitalium-verb"
+documentation = "https://docs.rs/vitalium_verb_dsp"
+categories = ["multimedia::audio"]
+keywords = ["reverb", "dsp"]
+
+[dependencies]
