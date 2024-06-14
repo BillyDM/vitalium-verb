@@ -1,0 +1,7 @@
+[package]
+name = "vitalium_verb_dsp_zig"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = "*"

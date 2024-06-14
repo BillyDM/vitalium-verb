@@ -10,7 +10,7 @@ publish = false
 
 [workspace]
 members = [
-    "vitalium_verb_dsp",
+    "vitalium_verb_dsp", "vitalium_verb_dsp_zig",
     "xtask"
 ]
 
@@ -19,6 +19,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 vitalium_verb_dsp = { path = "./vitalium_verb_dsp" }
+vitalium_verb_dsp_zig = { path = "./vitalium_verb_dsp_zig" }
 # Remove the `assert_process_allocs` feature to allow allocations on the audio
 # thread in debug builds.
 nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs"] }
