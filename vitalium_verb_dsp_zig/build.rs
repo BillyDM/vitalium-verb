@@ -41,35 +41,36 @@ fn main() {
     let mut emit_name = PathBuf::from(&out_dir);
     emit_name.push(format!("lib{}.a", lib_name));
 
-    let mut commands = Command::new("zig");
+    let mut command = Command::new("zig");
 
-    commands.arg("build-lib");
-    commands.arg("-static");
-    // changes the default SONAME to the specified lib name
-    commands.arg("--name");
-    commands.arg(lib_name);
+    command.arg("build-lib");
+    // build as a static library
+    command.arg("-static");
+    // change the default SONAME to the specified lib name
+    command.arg("--name");
+    command.arg(lib_name);
     // set the output directory of the build cache
-    commands.arg("--cache-dir");
-    commands.arg(&out_dir);
-    // set the output directy of the binary
-    commands.arg(format!("-femit-bin={}", emit_name.display()));
-    // set the target directory
-    commands.arg("-target");
-    commands.arg(target);
-    // set the compilation mode
-    commands.arg("-O");
-    commands.arg(&profile);
+    command.arg("--cache-dir");
+    command.arg(&out_dir);
+    // set the location and name of the output binary
+    command.arg(format!("-femit-bin={}", emit_name.display()));
+    // set the platform target
+    command.arg("-target");
+    command.arg(target);
+    // set the optimization level
+    command.arg("-O");
+    command.arg(&profile);
 
     // fixes linking issues
-    commands.arg("-fPIC");
+    command.arg("-fPIC");
 
     if &profile == "Debug" {
         // statically include the compiler safety checks when in debug mode
-        commands.arg("-fcompiler-rt");
+        command.arg("-fcompiler-rt");
     }
 
     // set the file to be compiled and linked
-    commands.arg(file);
+    command.arg(file);
 
-    commands.exec();
+    command.exec();
 }
