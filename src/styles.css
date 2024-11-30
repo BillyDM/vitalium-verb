@@ -1,0 +1,41 @@
+label {
+    color: rgb(231, 234, 234);
+}
+
+.version_text {
+    color: rgb(152, 152, 255);
+}
+
+.background {
+    background-color: rgb(62, 66, 69);
+}
+
+param-slider{
+    background-color: rgb(38, 42, 46);
+    border-color: rgb(38, 42, 46);
+    font-weight: normal;
+}
+
+param-slider .value {
+    color: rgb(255, 255, 255);
+}
+
+param-slider:active,
+param-slider:hover {
+    background-color: rgb(44, 48, 52);
+    border-color: rgb(44, 48, 52);
+}
+
+param-slider .fill {
+    background-color: rgb(152, 152, 255);
+}
+
+param-slider .value-entry {
+    color: rgb(255, 255, 255);
+}
+param-slider .value-entry .caret {
+    background-color: rgb(255, 255, 255);
+}
+param-slider .value-entry .selection {
+    background-color: #eeeeee30;
+}

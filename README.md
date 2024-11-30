@@ -1,8 +1,8 @@
 # VitaliumVerb
 
-A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](https://github.com/mtytel/vital)/[Vitalium] synthesizer, allowing it to be used as an effect plugin. There are also some minor improvements and optimizations added.
+![screenshot](assets/screenshot.png)
 
-This plugin has no GUI yet, and I don't plan on making a GUI in the forseeable future. Although if anyone wants to contribute a GUI, I'd be happy to include it!
+A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](https://github.com/mtytel/vital)/[Vitalium] synthesizer, allowing it to be used as an effect plugin. There are also some minor improvements and optimizations added.
 
 ## Download
 
