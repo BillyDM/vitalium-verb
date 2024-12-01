@@ -11,7 +11,9 @@ A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](
 
 You can download pre-built binaries for Linux, Windows, and MacOS from the [Releases](https://github.com/BillyDM/vitalium-verb/releases) tab.
 
-## Building and Installing
+Installation instructions are included in the zip files.
+
+## Building from source
 
 After installing [Rust](https://rustup.rs/) and the [nightly toolchain](https://rust-lang.github.io/rustup/concepts/channels.html) (`rustup toolchain install nightly`), you can compile VitaliumVerb as follows:
 
@@ -24,3 +26,7 @@ Then copy `/target/bundled/VitaliumVerb.clap` and/or `/target/bundled/VitaliumVe
 On macOS you may need to [disable Gatekeeper](https://disable-gatekeeper.github.io/) as Apple has recently made it more difficult to run unsigned code on macOS.
 
 [Vitalium]: https://github.com/DISTRHO/DISTRHO-Ports/tree/5c55f9445ee6ff75d53c7f8601fc341d200aa4a0/ports-juce6.0/vitalium
+
+## Technical Reading
+
+For those interested in my experience porting this plugin to Rust, I wrote a blogpost titled [Porting a Reverb](https://billydm.github.io/blog/porting-a-reverb/).
