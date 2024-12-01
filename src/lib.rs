@@ -116,7 +116,8 @@ impl Plugin for VitaliumVerb {
 
                 delay: self.params.main.delay.value() * 0.001,
 
-                width: self.params.main.width.smoothed.next_step(frames as u32) * 0.01,
+                width: (self.params.main.width.smoothed.next_step(frames as u32) - 100.0)
+                    * (1.0 / 100.0),
 
                 chorus_freq_hz: self
                     .params

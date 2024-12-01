@@ -75,12 +75,12 @@ impl Default for MainParams {
 
             width: FloatParam::new(
                 "Width",
-                ReverbParams::DEFAULT_WIDTH * 100.0,
+                100.0,
                 FloatRange::SymmetricalSkewed {
-                    min: -100.0,
-                    max: 100.0,
+                    min: 0.0,
+                    max: 200.0,
                     factor: 0.6,
-                    center: 0.0,
+                    center: 100.0,
                 },
             )
             .with_smoother(SmoothingStyle::Linear(50.0))

@@ -1466,9 +1466,9 @@ checksum = "d0263a3d970d5c054ed9312c0057b4f3bde9c0b33836d3637361d4a9e6e7a408"
 
 [[package]]
 name = "indexmap"
-version = "2.6.0"
+version = "2.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "707907fe3c25f5424cce2cb7e1cbcafee6bdbe735ca90ef77c29e84591e5b9da"
+checksum = "62f822373a4fe84d4bb149bf54e584a7f4abec90e072ed49cda0edea5b95471f"
 dependencies = [
  "equivalent",
  "hashbrown",
@@ -3096,7 +3096,7 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 
 [[package]]
 name = "vitalium_verb"
-version = "1.1.1"
+version = "1.2.0"
 dependencies = [
  "atomic_float 1.1.0",
  "nih_plug",
@@ -3106,7 +3106,7 @@ dependencies = [
 
 [[package]]
 name = "vitalium_verb_dsp"
-version = "0.1.1"
+version = "0.2.0"
 
 [[package]]
 name = "vizia"

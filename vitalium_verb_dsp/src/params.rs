@@ -42,7 +42,7 @@ pub struct ReverbParams {
     /// * `-1.0` reduces the stereo width to mono
     /// * `1.0` widens the stereo width to the maximum amount
     ///
-    /// By default this is set to `-0.05`
+    /// By default this is set to `0.0`
     pub width: f32,
 
     /// The frequency of the chorus applied to the feedback, in the range
