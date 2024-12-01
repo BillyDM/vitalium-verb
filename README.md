@@ -2,7 +2,9 @@
 
 ![screenshot](assets/screenshot.png)
 
-A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](https://github.com/mtytel/vital)/[Vitalium] synthesizer, allowing it to be used as an effect plugin. There are also some minor improvements and optimizations added.
+A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](https://github.com/mtytel/vital)/[Vitalium] synthesizer, allowing it to be used as an effect plugin. There are also a couple of minor improvements and optimizations added:
+* A stereo width parameter applied to the wet signal
+* Runtime-evaluated constants like filter coefficients, gain amplitudes, chorus phase increments, and allpass matrices are only recalculated when their respective parameters have changed (the original recalculated these every process cycle).
 
 ## Download
 
