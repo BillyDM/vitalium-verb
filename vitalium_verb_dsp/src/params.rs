@@ -116,7 +116,7 @@ impl ReverbParams {
     pub const DEFAULT_DELAY_SECONDS: f32 = 0.004;
     pub const DEFAULT_DECAY_SECONDS: f32 = 1.0;
     pub const DEFAULT_REVERB_SIZE: f32 = 0.5;
-    pub const DEFAULT_WIDTH: f32 = -0.05;
+    pub const DEFAULT_WIDTH: f32 = 0.0;
     pub const DEFAULT_CHORUS_AMOUNT: f32 = 0.046;
     pub const DEFAULT_CHORUS_FREQ: f32 = 0.25;
 }

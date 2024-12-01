@@ -61,9 +61,9 @@ fn build_gui(cx: &mut Context) {
     .height(Pixels(30.0))
     .right(Pixels(17.0))
     // Somehow this overrides the 'row-between' value now
-    .bottom(Pixels(1.0))
+    .bottom(Pixels(0.0))
     .left(Pixels(17.0))
-    .top(Pixels(9.0))
+    .top(Pixels(10.0))
     // This contains the editor mode buttom all the way on the left, and the plugin's name all the way on the right
     .col_between(Stretch(1.0));
 
@@ -189,8 +189,6 @@ pub fn create_slider<L, Params, P, FMap>(
             .height(Pixels(28.0))
             .width(Pixels(230.0))
             .set_style(if from_center {
-                // TODO: This doesn't actually force the parameter to use centered
-                // mode if the default value is not half. Make a PR to fix this.
                 ParamSliderStyle::Centered
             } else {
                 ParamSliderStyle::FromLeft

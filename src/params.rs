@@ -33,9 +33,7 @@ impl Default for MainParams {
                 },
             )
             .with_smoother(SmoothingStyle::Linear(50.0))
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            }))
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) }))
             .with_unit(" %"),
 
             size: FloatParam::new(
@@ -46,9 +44,7 @@ impl Default for MainParams {
                     max: 100.0,
                 },
             )
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            })),
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) })),
             decay: FloatParam::new(
                 "Decay",
                 decay_seconds_to_normal(ReverbParams::DEFAULT_DECAY_SECONDS),
@@ -74,9 +70,7 @@ impl Default for MainParams {
                     factor: 0.3,
                 },
             )
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            }))
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) }))
             .with_unit(" ms"),
 
             width: FloatParam::new(
@@ -90,9 +84,7 @@ impl Default for MainParams {
                 },
             )
             .with_smoother(SmoothingStyle::Linear(50.0))
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            }))
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) }))
             .with_unit(" %"),
         }
     }
@@ -132,9 +124,7 @@ impl Default for ChorusParams {
                 },
             )
             .with_smoother(SmoothingStyle::Linear(50.0))
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            }))
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) }))
             .with_unit(" %"),
         }
     }
@@ -219,9 +209,7 @@ impl Default for PostEQParams {
                 shelf_gain_range.clone(),
             )
             .with_smoother(SmoothingStyle::Linear(50.0))
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            }))
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) }))
             .with_unit(" dB"),
 
             high_shelf_cut: FloatParam::new(
@@ -238,9 +226,7 @@ impl Default for PostEQParams {
                 shelf_gain_range.clone(),
             )
             .with_smoother(SmoothingStyle::Linear(50.0))
-            .with_value_to_string(Arc::new(|val: f32| -> String {
-                format!("{:.2}", val)
-            }))
+            .with_value_to_string(Arc::new(|val: f32| -> String { format!("{:.2}", val) }))
             .with_unit(" dB"),
         }
     }
