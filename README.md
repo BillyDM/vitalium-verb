@@ -7,6 +7,8 @@ A [Rust](https://www.rust-lang.org/) port of the reverb module from the [Vital](
 * Tweaked parameter curves that focus better on the sweet spots
 * Runtime-evaluated constants like filter coefficients, gain amplitudes, chorus phase increments, and allpass matrices are only recalculated when their respective parameters have changed (the original recalculated these every process cycle).
 
+> Made using the awesome [NIH-plug](https://github.com/robbert-vdh/nih-plug) plugin development framework.
+
 ## Download
 
 You can download pre-built binaries for Linux, Windows, and MacOS from the [Releases](https://github.com/BillyDM/vitalium-verb/releases) tab.
@@ -15,7 +17,7 @@ Installation instructions are included in the zip files.
 
 ## Building from source
 
-After installing [Rust](https://rustup.rs/) and the [nightly toolchain](https://rust-lang.github.io/rustup/concepts/channels.html) (`rustup toolchain install nightly`), you can compile VitaliumVerb as follows:
+After installing [Rust]([https://rustup.rs/](https://www.rust-lang.org/learn/get-started)) and the [nightly toolchain](https://rust-lang.github.io/rustup/concepts/channels.html) (`rustup toolchain install nightly`), you can compile VitaliumVerb as follows:
 
 ```shell
 cargo +nightly xtask bundle vitalium_verb --release
