@@ -17,7 +17,7 @@ Installation instructions are included in the zip files.
 
 ## Building from source
 
-After installing [Rust]([https://rustup.rs/](https://www.rust-lang.org/learn/get-started)) and the [nightly toolchain](https://rust-lang.github.io/rustup/concepts/channels.html) (`rustup toolchain install nightly`), you can compile VitaliumVerb as follows:
+After installing [Rust](https://www.rust-lang.org/learn/get-started) and the [nightly toolchain](https://rust-lang.github.io/rustup/concepts/channels.html) (`rustup toolchain install nightly`), you can compile VitaliumVerb as follows:
 
 ```shell
 cargo +nightly xtask bundle vitalium_verb --release
