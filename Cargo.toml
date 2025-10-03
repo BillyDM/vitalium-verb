@@ -1,6 +1,6 @@
 [package]
 name = "vitalium_verb"
-version = "1.2.1"
+version = "1.2.2"
 edition = "2021"
 authors = ["Billy Messenger <60663878+BillyDM@users.noreply.github.com>"]
 license = "GPL-3.0-or-later"
@@ -21,12 +21,17 @@ crate-type = ["cdylib"]
 vitalium_verb_dsp = { path = "./vitalium_verb_dsp" }
 # Remove the `assert_process_allocs` feature to allow allocations on the audio
 # thread in debug builds.
-nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs"], rev = "400eb3156f221073fbcaf95607b56842272d134b" }
-nih_plug_vizia = { git = "https://github.com/robbert-vdh/nih-plug.git", rev = "400eb3156f221073fbcaf95607b56842272d134b" }
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs"], rev = "28b149ec4d62757d0b448809148a0c3ca6e09a95" }
+nih_plug_vizia = { git = "https://github.com/robbert-vdh/nih-plug.git", rev = "28b149ec4d62757d0b448809148a0c3ca6e09a95" }
 atomic_float = "1.1"
 # Uncomment the below line to disable the on-by-default VST3 feature to remove
 # the GPL compatibility requirement
 # nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", default_features = false, features = ["assert_process_allocs"] }
+
+# Fixes some issues like memory leaks, incorrect keyboard modifiers,
+# and the UI becoming unresponsive
+[patch."https://github.com/RustAudio/baseview.git"]
+baseview = { git = "https://github.com/blepfx/baseview.git", branch = "x11-fix-mods" }
 
 [profile.release]
 lto = "thin"
