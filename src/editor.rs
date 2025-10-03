@@ -86,19 +86,19 @@ fn build_gui(cx: &mut Context) {
             .row_between(Pixels(6.0));
         });
 
-        make_column(cx, "Post EQ", |cx| {
+        make_column(cx, "Hi/Lo Damping", |cx| {
             VStack::new(cx, |cx| {
-                create_slider(cx, "LS Freq", Data::params, false, |params| {
-                    &params.post_eq.low_shelf_cut
-                });
-                create_slider(cx, "LS Gain", Data::params, false, |params| {
-                    &params.post_eq.low_shelf_gain
+                create_slider(cx, "HS Gain", Data::params, false, |params| {
+                    &params.hi_lo_damping.high_shelf_gain
                 });
                 create_slider(cx, "HS Freq", Data::params, false, |params| {
-                    &params.post_eq.high_shelf_cut
+                    &params.hi_lo_damping.high_shelf_cut
                 });
-                create_slider(cx, "HS Gain", Data::params, false, |params| {
-                    &params.post_eq.high_shelf_gain
+                create_slider(cx, "LS Gain", Data::params, false, |params| {
+                    &params.hi_lo_damping.low_shelf_gain
+                });
+                create_slider(cx, "LS Freq", Data::params, false, |params| {
+                    &params.hi_lo_damping.low_shelf_cut
                 });
             })
             .top(Pixels(20.0))
@@ -125,13 +125,13 @@ fn build_gui(cx: &mut Context) {
             .row_between(Pixels(6.0));
         });
 
-        make_column(cx, "Pre EQ", |cx| {
+        make_column(cx, "Pre Filter", |cx| {
             VStack::new(cx, |cx| {
-                create_slider(cx, "Low Cut", Data::params, false, |params| {
-                    &params.pre_eq.pre_low_cut
-                });
                 create_slider(cx, "High Cut", Data::params, false, |params| {
-                    &params.pre_eq.pre_high_cut
+                    &params.pre_filter.pre_high_cut
+                });
+                create_slider(cx, "Low Cut", Data::params, false, |params| {
+                    &params.pre_filter.pre_low_cut
                 });
             })
             .top(Pixels(20.0))

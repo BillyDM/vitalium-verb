@@ -135,39 +135,39 @@ impl Plugin for VitaliumVerb {
 
                 pre_low_cut_hz: self
                     .params
-                    .pre_eq
+                    .pre_filter
                     .pre_low_cut
                     .smoothed
                     .next_step(frames as u32),
                 pre_high_cut_hz: self
                     .params
-                    .pre_eq
+                    .pre_filter
                     .pre_high_cut
                     .smoothed
                     .next_step(frames as u32),
 
                 low_shelf_cut_hz: self
                     .params
-                    .post_eq
+                    .hi_lo_damping
                     .low_shelf_cut
                     .smoothed
                     .next_step(frames as u32),
                 low_shelf_gain_db: self
                     .params
-                    .post_eq
+                    .hi_lo_damping
                     .low_shelf_gain
                     .smoothed
                     .next_step(frames as u32),
 
                 high_shelf_cut_hz: self
                     .params
-                    .post_eq
+                    .hi_lo_damping
                     .high_shelf_cut
                     .smoothed
                     .next_step(frames as u32),
                 high_shelf_gain_db: self
                     .params
-                    .post_eq
+                    .hi_lo_damping
                     .high_shelf_gain
                     .smoothed
                     .next_step(frames as u32),

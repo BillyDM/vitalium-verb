@@ -131,14 +131,14 @@ impl Default for ChorusParams {
 }
 
 #[derive(Params)]
-pub struct PreEQParams {
+pub struct PreFilterParams {
     #[id = "pre_low_cut"]
     pub pre_low_cut: FloatParam,
     #[id = "pre_high_cut"]
     pub pre_high_cut: FloatParam,
 }
 
-impl Default for PreEQParams {
+impl Default for PreFilterParams {
     fn default() -> Self {
         let cutoff_freq_range = FloatRange::Skewed {
             min: ReverbParams::MIN_CUTOFF_FREQ,
@@ -168,7 +168,7 @@ impl Default for PreEQParams {
 }
 
 #[derive(Params)]
-pub struct PostEQParams {
+pub struct HiLoDampingParams {
     #[id = "low_shelf_cut"]
     pub low_shelf_cut: FloatParam,
     #[id = "low_shelf_gain"]
@@ -180,7 +180,7 @@ pub struct PostEQParams {
     pub high_shelf_gain: FloatParam,
 }
 
-impl Default for PostEQParams {
+impl Default for HiLoDampingParams {
     fn default() -> Self {
         let cutoff_freq_range = FloatRange::Skewed {
             min: ReverbParams::MIN_CUTOFF_FREQ,
@@ -196,7 +196,7 @@ impl Default for PostEQParams {
 
         Self {
             low_shelf_cut: FloatParam::new(
-                "Low Shelf Cut",
+                "Damping LS Cut",
                 ReverbParams::DEFAULT_LOW_SHELF_CUTOFF,
                 cutoff_freq_range.clone(),
             )
@@ -204,7 +204,7 @@ impl Default for PostEQParams {
             .with_value_to_string(formatters::v2s_f32_hz_then_khz(0))
             .with_string_to_value(formatters::s2v_f32_hz_then_khz()),
             low_shelf_gain: FloatParam::new(
-                "Low Shelf Gain",
+                "Damping LS Gain",
                 ReverbParams::DEFAULT_LOW_SHELF_GAIN_DB,
                 shelf_gain_range.clone(),
             )
@@ -213,7 +213,7 @@ impl Default for PostEQParams {
             .with_unit(" dB"),
 
             high_shelf_cut: FloatParam::new(
-                "High Shelf Cut",
+                "Damping HS Cut",
                 ReverbParams::DEFAULT_HIGH_SHELF_CUTOFF,
                 cutoff_freq_range.clone(),
             )
@@ -221,7 +221,7 @@ impl Default for PostEQParams {
             .with_value_to_string(formatters::v2s_f32_hz_then_khz(0))
             .with_string_to_value(formatters::s2v_f32_hz_then_khz()),
             high_shelf_gain: FloatParam::new(
-                "High Shelf Gain",
+                "Damping HS Gain",
                 ReverbParams::DEFAULT_HIGH_SHELF_GAIN_DB,
                 shelf_gain_range.clone(),
             )
@@ -245,11 +245,11 @@ pub struct VitaliumVerbParams {
     #[nested(group = "chorus")]
     pub chorus: Arc<ChorusParams>,
 
-    #[nested(group = "pre-eq")]
-    pub pre_eq: Arc<PreEQParams>,
+    #[nested(group = "pre_filter")]
+    pub pre_filter: Arc<PreFilterParams>,
 
-    #[nested(group = "post-eq")]
-    pub post_eq: Arc<PostEQParams>,
+    #[nested(group = "hi_lo_damping")]
+    pub hi_lo_damping: Arc<HiLoDampingParams>,
 }
 
 impl Default for VitaliumVerbParams {
@@ -258,8 +258,8 @@ impl Default for VitaliumVerbParams {
             editor_state: crate::editor::default_state(),
             main: Arc::new(MainParams::default()),
             chorus: Arc::new(ChorusParams::default()),
-            pre_eq: Arc::new(PreEQParams::default()),
-            post_eq: Arc::new(PostEQParams::default()),
+            pre_filter: Arc::new(PreFilterParams::default()),
+            hi_lo_damping: Arc::new(HiLoDampingParams::default()),
         }
     }
 }
